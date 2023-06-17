@@ -2,19 +2,33 @@ body {
     word-break: break-word;
     font-family: 'Montserrat', sans-serif;
     background-color: rgba(128, 128, 128, 0.112);
+    max-width: 100%;
+    padding: 30px;
+    margin: 10px;
 }
 
 .form {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-self: flex-start;
-    padding: 50px;
-    border-style: solid 5px gray;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 15px;
+    margin: 20px;
+
+}
+
+@media(max-width:767px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
 }
 
 .form__input {
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.form__button {
+    background-color: teal;
+    color:rgb(241, 243, 243);
+    font-size: 15px;
+    border-style: none;
+    padding: 10px;
 }

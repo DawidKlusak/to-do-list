@@ -5,3 +5,16 @@ html {
 *, ::after, ::before {
     box-sizing: inherit;
 }
+
+.main {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+@media(max-width:767px) {
+    .main {
+        flex-basis: 100%;
+    }
+}
