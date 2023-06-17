@@ -1,10 +1,20 @@
 body {
     word-break: break-word;
     font-family: 'Montserrat', sans-serif;
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.112);
 }
 
 .form {
-    background-color: gray;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    padding: 50px;
+    border-style: solid 5px gray;
+}
 
+.form__input {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
