@@ -15,9 +15,8 @@
 
         for (const task of tasks) {
             htmlString += `
-            <li
-            ${task.done ? "list__task--done" : ""}>
-            ${taks.content}
+            <li>
+               ${task.content}
             </li>
             `;
         }
@@ -25,19 +24,29 @@
         document.querySelector(".js-tasks").innerHTML = htmlString;
     };
 
+    const addNewTask = (newTaskContent) => {
+        tasks.push({
+            content: newTaskContent,
+
+            render();
+        }
+
     const init = () => {
-        render();
+            render();
 
-        const form = document.querySelector(".js-form");
+            const form = document.querySelector(".js-form");
 
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
 
-            const newTaskContent = document.querySelector("js-newTask").value.trim();
-            if (newTaskContent === "") {
-                return;
-            }
+                const newTaskContent = document.querySelector(."js-newTask").value.trim();
+                if (newTaskContent === "") {
+                    return;
+                }
 
+
+            });
+            AddNewTask(newTaskContent);
         });
 
     };
