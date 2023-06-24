@@ -3,6 +3,7 @@
 
 Hi! This is my second to-do list project. Through this simple application, we can both add tasks and remove them in a simple and transparent way. The application has been formatted and is responsive.
 
+Besides technologies i showed below, i used: BEM, JavaScript ES+6, and normalize.css. That helps me make my project more responisve and clearly.
 
 ## Demo
 
