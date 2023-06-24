@@ -5,7 +5,7 @@
         tasks.push({
             content: newTaskContent,
         });
-        
+
         render();
     };
 
@@ -15,10 +15,10 @@
     }
 
     const toggleTaskDone = (index) => {
-        tasks[index].done =!tasks[index].done;
+        tasks[index].done = !tasks[index].done;
         render();
     }
-    
+
 
     const render = () => {
         let htmlString = "";
@@ -27,7 +27,9 @@
             htmlString +=
                 `
             <li class="list__items">
-            <button class="list__button--done js-done">${task.done ? "" : ""}</button>
+            <button class="list__button--done js-done">${task.done ? "✓" : ""}</button>
+            <span class="${task.done ? "list__text--done" : ""}">${task.content}</span>
+            <button class="list__button--remove js-remove">🗑️</button>
       ${task.content}
             </li>
             `;
@@ -46,7 +48,7 @@
             event.preventDefault();
 
             const newTaskContent = document.querySelector(".js-newTask").value.trim();
-           
+
             if (newTaskContent === "") {
                 return;
             }

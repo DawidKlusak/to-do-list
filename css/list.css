@@ -9,3 +9,12 @@
     border: none;
     color: white;
 }
+
+.list__button--remove {
+    background-color: crimson;
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
