@@ -18,3 +18,18 @@
     color: white;
     cursor: pointer;
 }
+
+.list {
+    padding: 15px;
+    margin: auto;
+}
+
+.list__items {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #eee;
+    padding: 10px;
+}

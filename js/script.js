@@ -46,9 +46,8 @@
                 `
             <li class="list__items">
             <button class="list__button--done js-done">${task.done ? "✓" : ""}</button>
-            <span class="${task.done ? "list__text--done" : ""}">${task.content}</span>
+            <span class="${task.done ? "list__text--done" : ""}"> ${task.content} </span>
             <button class="list__button--remove js-remove">🗑️</button>
-      ${task.content}
             </li>
             `;
         }
@@ -60,31 +59,31 @@
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-    
+
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
-    
+
         if (newTaskContent === "") {
             return;
         }
-    
+
         addNewTask(newTaskContent);
-    
+
         const newTaskInput = document.querySelector(".js-newTask");
         newTaskInput.value = "";
         newTaskInput.focus();
-    
+
     };
-    
+
     const init = () => {
         render();
-    
+
         const form = document.querySelector(".js-form");
-    
+
         form.addEventListener("submit", onFormSubmit);
     };
-    
+
     init();
-    
+
 }
 
 
