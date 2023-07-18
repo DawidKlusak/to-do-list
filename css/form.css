@@ -25,9 +25,19 @@ body {
 }
 
 .form__button {
-    background-color: teal;
-    color:rgb(241, 243, 243);
+    background-color: hsl(180, 100%, 25%);
+    color: rgb(241, 243, 243);
     font-size: 15px;
     border-style: none;
     padding: 10px;
+    transition: 0.5s linear;
+}
+
+.form__button:hover {
+    transform: scale(1.1);
+    background: rgb(4, 131, 153);
+}
+
+.form__button:active {
+    background: rgb(4, 148, 173);
 }
