@@ -30,6 +30,6 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 10px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 1px solid #ddd;
     padding: 10px;
 }
