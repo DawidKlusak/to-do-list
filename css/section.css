@@ -1,12 +1,16 @@
 .section {
     margin: 10px 0;
     width: 100%;
+    box-shadow: 0 0 5px #ddd;
     background-color: white;
 }
 
 .section__header {
-    font-size: 20px;
-    padding: 10px;
-    margin: 20px 0;
-    border-bottom: 3px solid rgba(128, 128, 128, 0.112);
+    margin: 0;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
