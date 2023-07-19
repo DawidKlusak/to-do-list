@@ -8,6 +8,12 @@
     height: 30px;
     border: none;
     color: white;
+    transition: 0.5s linear;
+}
+
+.list__button--done:hover {
+    transform: scale(1.2);
+    opacity:.8;
 }
 
 .list__button--remove {
@@ -17,6 +23,12 @@
     border: none;
     color: white;
     cursor: pointer;
+    transition: 0.5s linear;
+}
+
+.list__button--remove:hover {
+    transform: scale(1.2);
+    opacity:.8;
 }
 
 .list {
