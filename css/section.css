@@ -8,7 +8,7 @@
 .section__header {
     margin: 0;
     padding: 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #ddd;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
