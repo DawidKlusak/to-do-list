@@ -1,6 +1,6 @@
 {
     let tasks = [];
-    let hideDoneTasks = false;
+    let hideDoneTask = false;
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -26,6 +26,17 @@
         ];
         render();
     };
+
+    const markAllAsDone = () => {
+        tasks = tasks.map((task) => ({ ...task, done: true }));
+        render();
+    };
+
+    const toggleHideDoneTask = () => {
+        hideDoneTask = !hideDoneTask;
+        render();
+    };
+
 
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
