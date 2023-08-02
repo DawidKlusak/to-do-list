@@ -1,6 +1,6 @@
 {
     const tasks = [];
-    let hideDoneTasks = false;
+    let hideDoneTask = false;
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -63,7 +63,6 @@
     const render = () => {
         renderTasks();
         renderButtons();
-
         bindRemoveEvents();
         bindButtonsEvent();
         bindToggleDoneEvents();
@@ -72,16 +71,15 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
-
-        if (newTaskContent === "") {
-            return;
-        }
-
-        addNewTask(newTaskContent);
-
         const newTaskInput = document.querySelector(".js-newTask");
-        newTaskInput.value = "";
+        const newTaskContent = newTaskInput.value.trim();
+
+        if (newTaskContent !== "") 
+        {
+            addNewTask(newTaskContent);
+            newTaskInput.value = "";
+        };
+
         newTaskInput.focus();
     };
 
