@@ -1,6 +1,6 @@
 {
-    const tasks = [];
-    let hideDoneTask = false;
+    let tasks = [];
+    let hideDoneTasks = false;
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -10,8 +10,11 @@
         render();
     };
 
-    const removeTask = (index) => {
-        tasks.splice(index, 1);
+     const removeTask = (index) => {
+        tasks = [
+            ...tasks.slice(0, index),
+            ...tasks.slice(index + 1),
+        ];     
         render();
     };
 
@@ -44,14 +47,12 @@
         for (const task of tasks) {
             htmlString += `
         <li class="list__items">
-        <button class="list__button--done js-done">${task.done ? "✓" : ""
-                }</button>
-        <span class="${task.done ? "list__text--done" : ""}"> ${task.content
-                } </span>
+        <button class="list__button--done js-done">${task.done ? "✓" : ""}</button>
+        <span class="${task.done ? "list__text--done" : ""}"> ${task.content} </span>
         <button class="list__button--remove js-remove">🗑️</button>
         </li>
         `;
-        }
+        };
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
     };
@@ -65,7 +66,6 @@
         renderButtons();
         bindRemoveEvents();
         bindButtonsEvent();
-        bindToggleDoneEvents();
     };
 
     const onFormSubmit = (event) => {
@@ -92,4 +92,4 @@
     };
 
     init();
-}
+};
