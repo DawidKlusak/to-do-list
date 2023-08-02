@@ -72,30 +72,51 @@
         };
         };
 
-    const renderTasks = () => {
-        let htmlString = "";
-
-        for (const task of tasks) {
-            htmlString += `
-        <li class="list__items">
-        <button class="list__button--done js-done">${task.done ? "✓" : ""}</button>
-        <span class="${task.done ? "list__text--done" : ""}"> ${task.content} </span>
-        <button class="list__button--remove js-remove">🗑️</button>
-        </li>
-        `;
+        const renderTasks = () => {
+            let htmlString = "";
+    
+            for (const task of tasks) {
+                htmlString += `
+        <li class="${task.done && hideDoneTask ? "taskList__listItem--hideDone" : ""} taskList__listItem">
+        <button class="js-done taskList__button taskList__button--done">
+        ${task.done ? "✔" : ""}
+        </button>
+        <span class="${task.done ? "taskList__listItem--done" : ""}"> 
+        ${task.content}
+        </span>
+        <button class="js-removeButton taskList__button taskList__button--remove">
+        </button>
+        </li>`;
+            };
+    
+            document.querySelector(".js-tasks").innerHTML = htmlString;
         };
 
-        document.querySelector(".js-tasks").innerHTML = htmlString;
-    };
-
-    const renderButtons = () => { };
+        const renderButtons = () => {
+            const headerButtons = document.querySelector(".js-headerButtons");
+    
+            if (!tasks.length) {
+                headerButtons.innerHTML = "";
+                return;
+            }
+    
+            headerButtons.innerHTML = `
+            <button class = "js-hide taskList__button--header">
+            ${hideDoneTask ? "Pokaż" : "Ukryj"} ukończone
+            </button> 
+            <button class = "js-markAllAsDone taskList__button--header
+            ${tasks.every(({ done }) => done) ? " disabled " : ""}">
+            Ukończ wszystkie
+            </button>
+            `;
+        };
 
     const render = () => {
         renderTasks();
         renderButtons();
         bindRemoveEvents();
+        bindToggleDoneEvents();
         bindButtonsEvent();
-        bindToggleDoneEvents()
     };
 
     const onFormSubmit = (event) => {
