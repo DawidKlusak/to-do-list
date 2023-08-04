@@ -1,16 +1,17 @@
+.body {
+    font-family: "Montserrat", sans-serif;
+    display: block;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #eeee;
+}
+
 html {
     box-sizing: border-box;
 }
 
 *, ::after, ::before {
     box-sizing: inherit;
-}
-
-.main {
-    display: flex;
-    max-width: 1000px;
-    margin: 0 auto;
-    flex-direction: column;
 }
 
 @media(max-width:767px) {
