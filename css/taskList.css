@@ -1,0 +1,27 @@
+.taskList {
+    border-style: none;
+    background-color: white;
+    padding: 20px;
+}
+
+.taskList__header {
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+    padding: 20px;
+}
+
+@media (max-width: 758px) {
+    .taskList__header {
+        grid-template-columns: 1fr;
+        grid-gap: 0px;
+    }
+}
+
+.taskList__subtitle {
+    margin: 0px;
+}
