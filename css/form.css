@@ -1,21 +1,22 @@
-body {
-    word-break: break-word;
-    font-family: 'Montserrat', sans-serif;
-    background-color: rgba(128, 128, 128, 0.112);
-    max-width: 100%;
-    padding: 30px;
-    margin: 10px;
+.form__subtitle {
+    background-color: white;
+    padding: 20px;
+    margin: 2px;
 }
 
-.form {
+.form__fieldset--newTask {
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-gap: 15px;
-    margin: 20px;
+    grid-gap: 20px;
+    justify-content: space-between;
+    border-style: none;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 10px;
 }
 
-@media(max-width:767px) {
-    .form {
+@media (max-width: 768px) {
+    .form__fieldset--newTask {
         grid-template-columns: 1fr;
     }
 }
@@ -24,28 +25,15 @@ body {
     padding: 10px;
 }
 
-::placeholder {
-    font-size: 15px;
-    opacity: 0.8;
-}
-
-.form__button {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    background-color: hsl(180, 100%, 25%);
-    color: rgb(241, 243, 243);
-    font-size: 15px;
-    border: none;
+.form__button--submit {
+    background-color: teal;
+    color: white;
+    border-style: none;
     padding: 10px;
-    transition: 0.5s linear;
+    transition: 1s;
 }
 
-.form__button:hover {
-    transform: scale(1.1);
-    background: rgb(4, 131, 153);
-}
-
-.form__button:active {
-    background: rgb(4, 148, 173);
+.form__button--submit:hover {
+    background-color: hsl(180, 100%, 35%);
+    scale: 1.1;
 }
